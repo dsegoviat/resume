@@ -147,7 +147,7 @@ export const spokenLanguages: SpokenLanguage[] = [
     id: "en",
     name: "English",
     level: {
-      en: "Fluent",
+      en: "C1",
       es: "Fluido",
     },
   },

@@ -2,8 +2,6 @@ export type Locale = "en" | "es";
 
 export type LocalizedText = Record<Locale, string>;
 
-export type OpportunityTrack = "freelance" | "employee";
-
 export interface ContactLink {
   id: "email" | "linkedin";
   label: LocalizedText;
@@ -25,7 +23,6 @@ export interface SiteProfile {
 
 export interface ExperienceEntry {
   id: string;
-  track: OpportunityTrack;
   role: LocalizedText;
   company: string;
   location: LocalizedText;
@@ -54,6 +51,14 @@ export interface SpokenLanguage {
   level: LocalizedText;
 }
 
+export interface EducationEntry {
+  id: string;
+  degree: LocalizedText;
+  institution: LocalizedText;
+  location: LocalizedText;
+  periodLabel: LocalizedText;
+}
+
 export interface LocaleDictionary {
   nav: {
     experience: string;
@@ -79,14 +84,12 @@ export interface LocaleDictionary {
     remoteLabel: string;
     hybridLabel: string;
   };
-  filters: {
-    all: string;
-    freelance: string;
-    employee: string;
-  };
   experience: {
     title: string;
     subtitle: string;
+  };
+  education: {
+    title: string;
   };
   skills: {
     title: string;
@@ -99,9 +102,6 @@ export interface LocaleDictionary {
   contact: {
     title: string;
     body: string;
-  };
-  blog: {
-    comingSoon: string;
   };
 }
 

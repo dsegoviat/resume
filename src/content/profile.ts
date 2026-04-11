@@ -24,8 +24,8 @@ export const siteProfile: SiteProfile = {
       es: "Prioridad a oportunidades remotas en cualquier lugar.",
     },
     hybridBarcelona: {
-      en: "Hybrid in Barcelona with up to 2 on-site days per week.",
-      es: "Híbrido en Barcelona con un máximo de 2 días presenciales por semana.",
+      en: "Hybrid roles in Barcelona.",
+      es: "Roles híbridos en Barcelona.",
     },
   },
   contactLinks: [

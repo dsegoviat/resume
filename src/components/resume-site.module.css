@@ -111,10 +111,15 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
-.reveal {
+.revealItem {
   opacity: 0;
-  transform: translateY(10px);
-  animation: reveal-in 520ms ease forwards;
+  transform: translateX(-16px);
+  transition: opacity 480ms ease, transform 480ms ease;
+}
+
+.isVisible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .hero {
@@ -165,10 +170,30 @@
   color: var(--text-primary);
 }
 
-.opportunitySection h2,
-.availability h2 {
-  font-size: 1.02rem;
-  margin-bottom: 0.7rem;
+.sectionTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.58rem;
+  font-size: 1.06rem;
+}
+
+.titleIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--accent-soft);
+}
+
+.titleIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.opportunitySection,
+.availability,
+.section,
+.contact {
+  display: grid;
+  gap: 1rem;
 }
 
 .opportunityGrid,
@@ -179,7 +204,8 @@
 }
 
 .opportunityCard,
-.availabilityGrid article {
+.availabilityGrid article,
+.educationCard {
   border: 1px solid rgba(122, 146, 167, 0.24);
   border-radius: 14px;
   padding: 0.85rem;
@@ -187,48 +213,18 @@
 }
 
 .opportunityCard h3,
-.availabilityGrid h3 {
+.availabilityGrid h3,
+.educationCard h3 {
   margin-bottom: 0.4rem;
 }
 
 .opportunityCard p,
-.availabilityGrid p {
+.availabilityGrid p,
+.educationCard p,
+.educationCard span,
+.sectionHeader p,
+.contact p {
   color: var(--text-secondary);
-}
-
-.section {
-  display: grid;
-  gap: 1rem;
-}
-
-.sectionHeader {
-  display: grid;
-  gap: 0.4rem;
-}
-
-.sectionHeader p {
-  color: var(--text-secondary);
-}
-
-.filters {
-  display: flex;
-  gap: 0.55rem;
-  flex-wrap: wrap;
-}
-
-.filters button {
-  border: 1px solid rgba(122, 147, 168, 0.32);
-  color: var(--text-secondary);
-  background: rgba(9, 18, 28, 0.75);
-  padding: 0.45rem 0.74rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.filters .filterActive {
-  color: var(--text-primary);
-  border-color: rgba(88, 164, 230, 0.9);
-  background: rgba(33, 116, 183, 0.28);
 }
 
 .timeline {
@@ -255,7 +251,6 @@
   padding: 0.9rem;
   display: grid;
   gap: 0.7rem;
-  animation: slide-in 380ms ease both;
 }
 
 .timelineCard header {
@@ -263,7 +258,8 @@
   gap: 0.24rem;
 }
 
-.timelineCard header p {
+.timelineCard header p,
+.educationPeriod {
   font-family: var(--font-mono);
   color: var(--accent-soft);
   font-size: 0.8rem;
@@ -295,6 +291,12 @@
   border-radius: 999px;
   color: #abd6fa;
   background: rgba(25, 92, 148, 0.24);
+}
+
+.educationGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.85rem;
 }
 
 .skillsGrid {
@@ -357,13 +359,6 @@
 
 .contact {
   text-align: center;
-  display: grid;
-  gap: 0.9rem;
-}
-
-.contact p,
-.contact small {
-  color: var(--text-secondary);
 }
 
 .contactActions {
@@ -373,26 +368,21 @@
   flex-wrap: wrap;
 }
 
-@keyframes reveal-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.contactActions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
-@keyframes slide-in {
-  from {
-    opacity: 0;
-    transform: translateX(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.contactButtonIcon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-flex;
+}
+
+.contactButtonIcon svg {
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 1024px) {

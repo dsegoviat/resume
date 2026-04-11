@@ -28,15 +28,13 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
       remoteLabel: "Remote",
       hybridLabel: "Hybrid Barcelona",
     },
-    filters: {
-      all: "All",
-      freelance: "Freelance",
-      employee: "Employee",
-    },
     experience: {
       title: "Experience Timeline",
       subtitle:
         "From full-stack delivery to architecture and AI-native automation.",
+    },
+    education: {
+      title: "Education",
     },
     skills: {
       title: "Skills Map",
@@ -49,10 +47,7 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
     },
     contact: {
       title: "Let's Build Something Valuable",
-      body: "Open to remote opportunities and hybrid roles in Barcelona with up to 2 on-site days each week.",
-    },
-    blog: {
-      comingSoon: "Blog is hidden until the first post is published.",
+      body: "Open to remote opportunities and hybrid roles in Barcelona.",
     },
   },
   es: {
@@ -82,15 +77,13 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
       remoteLabel: "Remoto",
       hybridLabel: "Híbrido Barcelona",
     },
-    filters: {
-      all: "Todos",
-      freelance: "Freelance",
-      employee: "Empleado",
-    },
     experience: {
       title: "Timeline Profesional",
       subtitle:
         "Desde el desarrollo full-stack hasta arquitectura y automatización AI-native.",
+    },
+    education: {
+      title: "Educacion",
     },
     skills: {
       title: "Mapa de Habilidades",
@@ -103,10 +96,7 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
     },
     contact: {
       title: "Construyamos Algo con Impacto",
-      body: "Abierto a oportunidades remotas y a roles híbridos en Barcelona con un máximo de 2 días presenciales por semana.",
-    },
-    blog: {
-      comingSoon: "El blog se mostrará cuando se publique el primer post.",
+      body: "Abierto a oportunidades remotas y a roles hibridos en Barcelona.",
     },
   },
 };

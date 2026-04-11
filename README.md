@@ -69,4 +69,4 @@ Your post content.
 
 - English is the default language at first load.
 - The EN/ES selection is stored in localStorage.
-- Site messaging is optimized for remote opportunities and hybrid Barcelona (max 2 on-site days/week).
+- Site messaging is optimized for remote opportunities and hybrid roles in Barcelona.

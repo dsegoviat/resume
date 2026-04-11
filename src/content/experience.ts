@@ -3,12 +3,11 @@ import { ExperienceEntry } from "@/types/content";
 export const experienceEntries: ExperienceEntry[] = [
   {
     id: "ai-automation-engineer",
-    track: "freelance",
     role: {
       en: "AI and Automation Engineer",
       es: "AI and Automation Engineer",
     },
-    company: "Freelance",
+    company: "Mercedes-Benz (via LTS Beratung)",
     location: {
       en: "Remote",
       es: "Remoto",
@@ -36,12 +35,11 @@ export const experienceEntries: ExperienceEntry[] = [
   },
   {
     id: "frontend-devops-engineer",
-    track: "freelance",
     role: {
       en: "Frontend and DevOps Engineer",
       es: "Ingeniero Frontend y DevOps",
     },
-    company: "Freelance",
+    company: "Mercedes-Benz (via LTS Beratung)",
     location: {
       en: "Remote",
       es: "Remoto",
@@ -65,12 +63,11 @@ export const experienceEntries: ExperienceEntry[] = [
   },
   {
     id: "fullstack-freelance",
-    track: "freelance",
     role: {
       en: "Full-stack Software Engineer",
       es: "Ingeniero Full-stack",
     },
-    company: "Freelance",
+    company: "Mercedes-Benz (via LTS Beratung)",
     location: {
       en: "Barcelona / Remote",
       es: "Barcelona / Remoto",
@@ -99,7 +96,6 @@ export const experienceEntries: ExperienceEntry[] = [
   },
   {
     id: "accenture",
-    track: "employee",
     role: {
       en: "Junior Full-stack Developer",
       es: "Desarrollador Full-stack Junior",
