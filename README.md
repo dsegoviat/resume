@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# resume
 
-## Getting Started
+Interactive bilingual resume website for David Segovia, built with Next.js and exported as static files for GitHub Pages.
 
-First, run the development server:
+## Stack
+
+- Next.js (App Router) + TypeScript
+- Static export (`out/`) for GitHub Pages
+- MDX-based blog content pipeline (hidden while there are no published posts)
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+Static output is generated in `out/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to GitHub Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The workflow at `.github/workflows/deploy.yml` deploys automatically on pushes to `main`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Target URL:
 
-## Deploy on Vercel
+- `https://dsegoviat.github.io/resume/`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Content Editing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Resume content
+
+Edit structured data files:
+
+- `src/content/profile.ts`
+- `src/content/experience.ts`
+- `src/content/skills.ts`
+- `src/content/dictionary.ts`
+
+### Blog posts (hidden until first post)
+
+1. Add an `.mdx` file under `content/posts/`.
+2. Include frontmatter:
+
+```md
+---
+title: "Post title"
+date: "2026-04-11"
+summary: "One-sentence summary"
+tags: ["nextjs", "architecture"]
+published: true
+locale: "en"
+---
+
+Your post content.
+```
+
+3. Once at least one post has `published: true`, the Blog link appears automatically in navigation.
+
+## Notes
+
+- English is the default language at first load.
+- The EN/ES selection is stored in localStorage.
+- Site messaging is optimized for remote opportunities and hybrid Barcelona (max 2 on-site days/week).
