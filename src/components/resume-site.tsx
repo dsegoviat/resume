@@ -208,6 +208,7 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
       <main className={styles.main}>
         <section className={`${styles.hero} ${styles.revealItem}`} data-reveal>
           <p className={styles.heroTitle}>{getLocalizedText(locale, siteProfile.title)}</p>
+          <p className={styles.heroName}>{siteProfile.name}</p>
           <h1>{getLocalizedText(locale, siteProfile.summary)}</h1>
           <p className={styles.metaLine}>
             {getLocalizedText(locale, siteProfile.location)} | {getLocalizedText(locale, siteProfile.availability)}
