@@ -3,7 +3,7 @@ export type Locale = "en" | "es";
 export type LocalizedText = Record<Locale, string>;
 
 export interface ContactLink {
-  id: "email" | "linkedin";
+  id: "email" | "linkedin" | "github";
   label: LocalizedText;
   href: string;
 }

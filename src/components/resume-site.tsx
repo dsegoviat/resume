@@ -51,6 +51,15 @@ function LinkedinIcon() {
   );
 }
 
+function GithubIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M9.5 18.5c-3 .9-3-1.3-4.2-1.7" />
+      <path d="M14.5 18.5v-2.3c0-.8.1-1.2-.3-1.7 2.7-.3 5.5-1.3 5.5-5.8 0-1.3-.4-2.3-1.2-3.1.1-.3.5-1.5-.1-3.1 0 0-1-.3-3.2 1.2a11.2 11.2 0 00-5.8 0C7.2 2.2 6.2 2.5 6.2 2.5c-.6 1.6-.2 2.8-.1 3.1-.8.8-1.2 1.8-1.2 3.1 0 4.4 2.8 5.5 5.5 5.8-.4.5-.4 1-.4 2v1.8" />
+    </svg>
+  );
+}
+
 function FolderIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -355,11 +364,17 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
               <a
                 key={link.id}
                 href={link.href}
-                target={link.id === "linkedin" ? "_blank" : undefined}
-                rel={link.id === "linkedin" ? "noreferrer" : undefined}
+                target={link.id === "email" ? undefined : "_blank"}
+                rel={link.id === "email" ? undefined : "noreferrer"}
               >
                 <span className={styles.contactButtonIcon} aria-hidden="true">
-                  {link.id === "email" ? <EmailIcon /> : <LinkedinIcon />}
+                  {link.id === "email" ? (
+                    <EmailIcon />
+                  ) : link.id === "linkedin" ? (
+                    <LinkedinIcon />
+                  ) : (
+                    <GithubIcon />
+                  )}
                 </span>
                 {getLocalizedText(locale, link.label)}
               </a>
