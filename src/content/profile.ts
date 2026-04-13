@@ -43,7 +43,7 @@ export const siteProfile: SiteProfile = {
         en: "LinkedIn",
         es: "LinkedIn",
       },
-      href: "https://www.linkedin.com/in/david-segovia-tomas/",
+      href: "https://www.linkedin.com/in/david-segovia-tomas-4b4804140/",
     },
     {
       id: "github",
