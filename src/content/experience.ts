@@ -5,7 +5,7 @@ export const experienceEntries: ExperienceEntry[] = [
     id: "ai-automation-engineer",
     role: {
       en: "AI and Automation Engineer",
-      es: "AI and Automation Engineer",
+      es: "Ingeniero de IA y Automatizacion",
     },
     company: "Mercedes-Benz (via LTS Beratung)",
     location: {
@@ -19,16 +19,12 @@ export const experienceEntries: ExperienceEntry[] = [
     startYear: 2024,
     bullets: [
       {
-        en: "Built LLM-powered agents, RAG flows and n8n automations for faster internal operations.",
-        es: "Construcción de agentes con LLM, flujos RAG y automatizaciones con n8n para acelerar operaciones internas.",
+        en: "LLM-powered agents, n8n workflows, RAG (retrieval-augmented generation), LangChain, MCP servers and STT/TTS integration.",
+        es: "Agentes con LLM, workflows en n8n, RAG (retrieval-augmented generation), LangChain, servidores MCP e integracion STT/TTS.",
       },
       {
-        en: "Integrated MCP servers plus STT/TTS pipelines for multimodal product experiences.",
-        es: "Integración de servidores MCP y pipelines STT/TTS para experiencias de producto multimodales.",
-      },
-      {
-        en: "Prototyped AI-enabled SaaS products with Next.js and TypeScript.",
-        es: "Prototipado de productos SaaS con IA usando Next.js y TypeScript.",
+        en: "Rapid SaaS prototyping with Next.js integrating AI agents.",
+        es: "Prototipado rapido de SaaS con Next.js integrando agentes de IA.",
       },
     ],
     techTags: ["Next.js", "TypeScript", "LLM", "RAG", "n8n", "LangChain", "MCP"],
@@ -36,8 +32,8 @@ export const experienceEntries: ExperienceEntry[] = [
   {
     id: "frontend-devops-engineer",
     role: {
-      en: "Frontend and DevOps Engineer",
-      es: "Ingeniero Frontend y DevOps",
+      en: "Tech Lead & DevOps Engineer",
+      es: "Tech Lead y DevOps Engineer",
     },
     company: "Mercedes-Benz (via LTS Beratung)",
     location: {
@@ -45,18 +41,23 @@ export const experienceEntries: ExperienceEntry[] = [
       es: "Remoto",
     },
     periodLabel: {
-      en: "2022 - Current",
-      es: "2022 - Actualidad",
+      en: "2022 - 2024",
+      es: "2022 - 2024",
     },
     startYear: 2022,
+    endYear: 2024,
     bullets: [
       {
-        en: "Delivered web applications and CI/CD automation on Azure and GitHub Actions.",
-        es: "Entrega de aplicaciones web y automatización CI/CD en Azure y GitHub Actions.",
+        en: "Lead engineer in a team of 5.",
+        es: "Lead engineer en un equipo de 5 personas.",
       },
       {
-        en: "Managed product execution while building runner infrastructure and metric dashboards.",
-        es: "Gestión de producto mientras desarrollaba infraestructura de runners y cuadros de métricas.",
+        en: "Web development and CI/CD automation based on Azure.",
+        es: "Desarrollo web y automatizacion CI/CD sobre Azure.",
+      },
+      {
+        en: "PM and developer in GHA runners infrastructure and metric dashboards.",
+        es: "PM y developer en infraestructura de runners de GHA y dashboards de metricas.",
       },
     ],
     techTags: ["React", "Next.js", "Azure", "GitHub Actions", "DevOps"],
@@ -64,8 +65,8 @@ export const experienceEntries: ExperienceEntry[] = [
   {
     id: "fullstack-freelance",
     role: {
-      en: "Full-stack Software Engineer",
-      es: "Ingeniero Full-stack",
+      en: "Full Stack Engineer",
+      es: "Ingeniero Full Stack",
     },
     company: "Mercedes-Benz (via LTS Beratung)",
     location: {
@@ -80,16 +81,20 @@ export const experienceEntries: ExperienceEntry[] = [
     endYear: 2022,
     bullets: [
       {
-        en: "Designed SaaS platforms and IT infrastructure with strong ownership across architecture and delivery.",
-        es: "Diseño de plataformas SaaS e infraestructura IT con alta responsabilidad en arquitectura y entrega.",
+        en: "Lead developer of multiple SaaS applications and IT infrastructure based on AWS.",
+        es: "Lead developer de multiples aplicaciones SaaS e infraestructura IT basada en AWS.",
       },
       {
-        en: "Led UNIX-based systems administration and cloud deployments on AWS.",
-        es: "Liderazgo en administración de sistemas UNIX y despliegues cloud en AWS.",
+        en: "DevOps engineering and software development providing automated IT infrastructure and customer support.",
+        es: "Ingenieria DevOps y desarrollo de software aportando infraestructura IT automatizada y soporte a cliente.",
       },
       {
-        en: "Balanced product management, client communication and hands-on engineering.",
-        es: "Combinación de gestión de producto, comunicación con cliente y desarrollo técnico.",
+        en: "Project management, product design and software development of an IT infrastructure e-store.",
+        es: "Gestion de proyecto, diseno de producto y desarrollo de software para un e-store de infraestructura IT.",
+      },
+      {
+        en: "UNIX-based system administration.",
+        es: "Administracion de sistemas basada en UNIX.",
       },
     ],
     techTags: ["AWS", "UNIX", "SaaS", "Architecture", "Product"],
@@ -113,16 +118,16 @@ export const experienceEntries: ExperienceEntry[] = [
     endYear: 2017,
     bullets: [
       {
-        en: "Developed Android and hybrid mobile applications.",
-        es: "Desarrollo de aplicaciones Android e híbridas.",
+        en: "Android and Hybrid app development.",
+        es: "Desarrollo de aplicaciones Android e hibridas.",
       },
       {
-        en: "Implemented REST APIs with Spring Boot and Java.",
-        es: "Implementación de APIs REST con Spring Boot y Java.",
+        en: "REST API development using Spring Boot (Java).",
+        es: "Desarrollo de APIs REST usando Spring Boot (Java).",
       },
       {
-        en: "Created automation scripts with JavaScript and Python.",
-        es: "Creación de scripts de automatización con JavaScript y Python.",
+        en: "Automation scripting using JavaScript and Python.",
+        es: "Scripting de automatizacion usando JavaScript y Python.",
       },
     ],
     techTags: ["Java", "Spring Boot", "Android", "Python", "JavaScript"],
