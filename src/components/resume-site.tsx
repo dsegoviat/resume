@@ -30,6 +30,34 @@ function SectionTitle({ icon, title }: { icon: ReactNode; title: string }) {
   );
 }
 
+function PrintSectionHeading({
+  icon,
+  title,
+  className,
+}: {
+  icon: ReactNode;
+  title: string;
+  className?: string;
+}) {
+  return (
+    <h2 className={className ?? styles.printSectionHeading}>
+      <span className={styles.printSectionIcon} aria-hidden="true">
+        {icon}
+      </span>
+      {title}
+    </h2>
+  );
+}
+
+function AboutIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <circle cx="12" cy="7.5" r="3.2" />
+      <path d="M5 20c.8-3.8 3.8-6 7-6s6.2 2.2 7 6" />
+    </svg>
+  );
+}
+
 function EmailIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -113,6 +141,22 @@ function SkillsIcon() {
   );
 }
 
+function TechChipIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <rect x="7" y="7" width="10" height="10" rx="1.6" />
+      <path d="M9 1.8V5" />
+      <path d="M15 1.8V5" />
+      <path d="M9 19v3.2" />
+      <path d="M15 19v3.2" />
+      <path d="M1.8 9H5" />
+      <path d="M1.8 15H5" />
+      <path d="M19 9h3.2" />
+      <path d="M19 15h3.2" />
+    </svg>
+  );
+}
+
 function LanguageIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -133,6 +177,53 @@ function ContactIcon() {
   );
 }
 
+function PrintIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <rect x="6" y="3.5" width="12" height="5" rx="1" />
+      <path d="M6.5 13h11a2.5 2.5 0 012.5 2.5V19h-2.5v1.5h-11V19H4v-3.5A2.5 2.5 0 016.5 13z" />
+      <path d="M8 17h8" />
+    </svg>
+  );
+}
+
+function LinkOutIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M14 5h5v5" />
+      <path d="M19 5l-9 9" />
+      <path d="M19 13v5a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h5" />
+    </svg>
+  );
+}
+
+function LocationIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M12 20s6-5.1 6-10a6 6 0 10-12 0c0 4.9 6 10 6 10z" />
+      <circle cx="12" cy="10" r="2.1" />
+    </svg>
+  );
+}
+
+function PhoneSmallIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M6.5 4.5h3l1 4-2 1.8a14 14 0 006.2 6.2l1.8-2 4 1v3a2 2 0 01-2 2A15.5 15.5 0 014.5 6.5a2 2 0 012-2z" />
+    </svg>
+  );
+}
+
+function cleanCvLocation(locale: Locale, location: string) {
+  const remotePattern = locale === "es" ? /(?:\s*\/\s*)?Remoto/gi : /(?:\s*\/\s*)?Remote/gi;
+
+  return location
+    .replace(remotePattern, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s*\/\s*$/, "")
+    .trim();
+}
+
 export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
   const [locale, setLocale] = useState<Locale>(() => {
     if (typeof window === "undefined") {
@@ -145,8 +236,38 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
   const dictionary = dictionaries[locale];
 
   const sortedExperiences = useMemo(() => {
-    return [...experienceEntries].sort((a, b) => b.startYear - a.startYear);
+    const priority: Record<string, number> = {
+      "ai-automation-engineer": 0,
+      "omnios-frontend-cloud": 1,
+    };
+
+    return [...experienceEntries].sort((a, b) => {
+      const aPriority = priority[a.id];
+      const bPriority = priority[b.id];
+      const aHasPriority = aPriority !== undefined;
+      const bHasPriority = bPriority !== undefined;
+
+      if (aHasPriority || bHasPriority) {
+        if (aHasPriority && bHasPriority) {
+          return aPriority - bPriority;
+        }
+        return aHasPriority ? -1 : 1;
+      }
+
+      return b.startYear - a.startYear;
+    });
   }, []);
+  const printExperiencePages = useMemo(() => {
+    if (sortedExperiences.length <= 5) {
+      return [sortedExperiences];
+    }
+
+    return [sortedExperiences.slice(0, 5), sortedExperiences.slice(5)];
+  }, [sortedExperiences]);
+
+  const emailLink = siteProfile.contactLinks.find((link) => link.id === "email");
+  const emailAddress = emailLink?.href.replace("mailto:", "");
+  const linkedinLink = siteProfile.contactLinks.find((link) => link.id === "linkedin");
 
   useEffect(() => {
     const nodes = Array.from(
@@ -188,6 +309,7 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
         </div>
 
         <nav className={styles.nav}>
+          <a href="#about">{dictionary.nav.about}</a>
           <a href="#experience">{dictionary.nav.experience}</a>
           <a href="#education">{dictionary.education.title}</a>
           <a href="#skills">{dictionary.nav.skills}</a>
@@ -215,6 +337,177 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
       </header>
 
       <main className={styles.main}>
+        <section className={styles.printResume} aria-label={dictionary.print.profileTitle}>
+          <section className={styles.printSummaryPage}>
+            <div className={styles.printSummaryGrid}>
+              <aside className={styles.printSummaryLeft}>
+                <section className={styles.printSummaryBlock}>
+                  <h1 className={styles.printName}>{siteProfile.name}</h1>
+                  <p className={styles.printRole}>{getLocalizedText(locale, siteProfile.title)}</p>
+                </section>
+
+                <section className={styles.printSummaryBlock}>
+                  <h2>{dictionary.print.contactTitle}</h2>
+                  <ul className={styles.printMetaList}>
+                    <li>
+                      <span className={styles.printInlineIcon} aria-hidden="true">
+                        <LocationIcon />
+                      </span>
+                      {getLocalizedText(locale, siteProfile.location)}
+                    </li>
+                    <li>
+                      <span className={styles.printInlineIcon} aria-hidden="true">
+                        <PhoneSmallIcon />
+                      </span>
+                      {siteProfile.phone}
+                    </li>
+                    {emailLink ? (
+                      <li>
+                        <span className={styles.printEmailLine}>
+                          <span className={styles.printInlineIcon} aria-hidden="true">
+                            <EmailIcon />
+                          </span>
+                          {emailAddress ?? dictionary.print.emailLabel}
+                        </span>
+                      </li>
+                    ) : null}
+                    {linkedinLink ? (
+                      <li>
+                        <a href={linkedinLink.href} target="_blank" rel="noreferrer">
+                          <span className={styles.printInlineIcon} aria-hidden="true">
+                            <LinkedinIcon />
+                          </span>
+                          {dictionary.print.linkedinLabel}
+                          <span className={styles.printLinkIcon} aria-hidden="true">
+                            <LinkOutIcon />
+                          </span>
+                        </a>
+                      </li>
+                    ) : null}
+                    <li>
+                      <a href={siteProfile.resumeUrl} target="_blank" rel="noreferrer">
+                        <span className={styles.printInlineIcon} aria-hidden="true">
+                          <LanguageIcon />
+                        </span>
+                        {dictionary.print.websiteLabel}
+                        <span className={styles.printLinkIcon} aria-hidden="true">
+                          <LinkOutIcon />
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </section>
+
+                <section className={styles.printSummaryBlock}>
+                  <h2>{dictionary.education.title}</h2>
+                  <ul className={styles.printCompactList}>
+                    {educationEntries.map((entry) => (
+                      <li key={entry.id}>
+                        <strong>{getLocalizedText(locale, entry.degree)}</strong>
+                        <p>{getLocalizedText(locale, entry.institution)}</p>
+                        <span>{getLocalizedText(locale, entry.periodLabel)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                <section className={styles.printSummaryBlock}>
+                  <h2>{dictionary.languages.title}</h2>
+                  <ul className={styles.printLanguageList}>
+                    {spokenLanguages.map((language) => (
+                      <li key={language.id} className={styles.printLanguageItem}>
+                        <strong>{language.name}</strong>
+                        <span>{getLocalizedText(locale, language.level)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                <section className={styles.printSummaryBlock}>
+                  <h2>{dictionary.print.softSkillsTitle}</h2>
+                  <ul className={styles.printBulletList}>
+                    {siteProfile.softSkills.map((skill) => (
+                      <li key={skill.en}>{getLocalizedText(locale, skill)}</li>
+                    ))}
+                  </ul>
+                </section>
+              </aside>
+
+              <div className={styles.printSummaryRight}>
+                <section className={styles.printSummaryBlock}>
+                  <PrintSectionHeading icon={<AboutIcon />} title={dictionary.about.title} />
+                  <div className={styles.printAboutBody}>
+                    {siteProfile.about[locale].map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </section>
+
+                <section className={styles.printSummaryBlock}>
+                  <PrintSectionHeading
+                    icon={<TechChipIcon />}
+                    title={dictionary.print.technologiesTitle}
+                  />
+                  <div className={styles.printTechGroups}>
+                    {siteProfile.technologyGroups.map((group) => (
+                      <article key={group.id} className={styles.printTechGroup}>
+                        <h3>{getLocalizedText(locale, group.title)}</h3>
+                        <ul className={styles.printTechList}>
+                          {group.items.map((item) => (
+                            <li key={`${group.id}-${item.name}`}>
+                              <strong>{item.name}</strong>
+                              <span>
+                                {item.years} {dictionary.skills.yearsLabel}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              </div>
+            </div>
+          </section>
+
+          {printExperiencePages.map((pageEntries, pageIndex) => (
+            <section key={`print-exp-page-${pageIndex}`} className={styles.printExperiencePage}>
+              <PrintSectionHeading
+                icon={<TimelineIcon />}
+                title={dictionary.experience.title}
+                className={styles.printExperienceHeading}
+              />
+              <div className={styles.printExperienceList}>
+                {pageEntries.map((entry) => {
+                  const cvLocation = cleanCvLocation(locale, getLocalizedText(locale, entry.location));
+
+                  return (
+                    <article key={`print-${entry.id}`} className={styles.printExperienceItem}>
+                      <header>
+                        <p>{getLocalizedText(locale, entry.periodLabel)}</p>
+                        <h3>
+                          {getLocalizedText(locale, entry.role)} - {entry.company}
+                        </h3>
+                        {cvLocation ? <span>{cvLocation}</span> : null}
+                      </header>
+                      <ul>
+                        {entry.bullets.map((bullet) => (
+                          <li key={`print-${entry.id}-${bullet.en}`}>{getLocalizedText(locale, bullet)}</li>
+                        ))}
+                      </ul>
+                      <div className={styles.printExperienceTags}>
+                        {entry.techTags.map((tag) => (
+                          <span key={`print-${entry.id}-${tag}`}>{tag}</span>
+                        ))}
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </section>
+          ))}
+        </section>
+
         <section className={`${styles.hero} ${styles.revealItem}`} data-reveal>
           <p className={styles.heroTitle}>{getLocalizedText(locale, siteProfile.title)}</p>
           <p className={styles.heroName}>{siteProfile.name}</p>
@@ -229,6 +522,32 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
             <a href="#experience" className={styles.secondaryCta}>
               {dictionary.hero.ctaSecondary}
             </a>
+            <button
+              type="button"
+              className={styles.printCta}
+              onClick={() => window.print()}
+              aria-label={dictionary.hero.ctaPrint}
+            >
+              <span className={styles.printButtonIcon} aria-hidden="true">
+                <PrintIcon />
+              </span>
+              {dictionary.hero.ctaPrint}
+            </button>
+          </div>
+        </section>
+
+        <section
+          id="about"
+          className={`${styles.section} ${styles.aboutSection} ${styles.revealItem}`}
+          data-reveal
+        >
+          <div className={styles.sectionHeader}>
+            <SectionTitle icon={<AboutIcon />} title={dictionary.about.title} />
+          </div>
+          <div className={styles.aboutBody}>
+            {siteProfile.about[locale].map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </section>
 
@@ -246,7 +565,10 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
           </div>
         </section>
 
-        <section className={`${styles.availability} ${styles.revealItem}`} data-reveal>
+        <section
+          className={`${styles.availability} ${styles.availabilitySection} ${styles.revealItem}`}
+          data-reveal
+        >
           <SectionTitle icon={<PinIcon />} title={dictionary.availability.title} />
           <div className={styles.availabilityGrid}>
             <article>
@@ -262,7 +584,7 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
 
         <section
           id="experience"
-          className={`${styles.section} ${styles.revealItem}`}
+          className={`${styles.section} ${styles.experienceSection} ${styles.revealItem}`}
           data-reveal
         >
           <div className={styles.sectionHeader}>
@@ -295,7 +617,11 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
           </div>
         </section>
 
-        <section id="education" className={`${styles.section} ${styles.revealItem}`} data-reveal>
+        <section
+          id="education"
+          className={`${styles.section} ${styles.educationSection} ${styles.revealItem}`}
+          data-reveal
+        >
           <div className={styles.sectionHeader}>
             <SectionTitle icon={<EducationIcon />} title={dictionary.education.title} />
           </div>
@@ -311,7 +637,11 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
           </div>
         </section>
 
-        <section id="skills" className={`${styles.section} ${styles.revealItem}`} data-reveal>
+        <section
+          id="skills"
+          className={`${styles.section} ${styles.skillsSection} ${styles.revealItem}`}
+          data-reveal
+        >
           <div className={styles.sectionHeader}>
             <SectionTitle icon={<SkillsIcon />} title={dictionary.skills.title} />
             <p>{dictionary.skills.subtitle}</p>
@@ -340,7 +670,7 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
 
         <section
           id="languages"
-          className={`${styles.section} ${styles.revealItem}`}
+          className={`${styles.section} ${styles.languagesSection} ${styles.revealItem}`}
           data-reveal
         >
           <div className={styles.sectionHeader}>
@@ -356,7 +686,11 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
           </div>
         </section>
 
-        <section id="contact" className={`${styles.contact} ${styles.revealItem}`} data-reveal>
+        <section
+          id="contact"
+          className={`${styles.contact} ${styles.contactSection} ${styles.revealItem}`}
+          data-reveal
+        >
           <SectionTitle icon={<ContactIcon />} title={dictionary.contact.title} />
           <p>{dictionary.contact.body}</p>
           <div className={styles.contactActions}>

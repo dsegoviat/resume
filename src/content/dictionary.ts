@@ -3,6 +3,7 @@ import { Locale, LocaleDictionary } from "@/types/content";
 export const dictionaries: Record<Locale, LocaleDictionary> = {
   en: {
     nav: {
+      about: "About",
       experience: "Experience",
       skills: "Skills",
       languages: "Languages",
@@ -13,6 +14,10 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
       kicker: "Interactive Resume",
       ctaPrimary: "Get in touch",
       ctaSecondary: "See experience",
+      ctaPrint: "Print / Save PDF",
+    },
+    about: {
+      title: "About Me",
     },
     opportunities: {
       title: "Opportunity Tracks",
@@ -49,9 +54,21 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
       title: "Let's Build Something Valuable",
       body: "Open to remote opportunities and hybrid roles in Barcelona.",
     },
+    print: {
+      profileTitle: "Profile",
+      technologiesTitle: "Core Technologies",
+      softSkillsTitle: "Soft Skills",
+      contactTitle: "Contact",
+      locationLabel: "Based in",
+      phoneLabel: "Phone",
+      emailLabel: "Email",
+      linkedinLabel: "LinkedIn",
+      websiteLabel: "Website",
+    },
   },
   es: {
     nav: {
+      about: "Sobre mí",
       experience: "Experiencia",
       skills: "Habilidades",
       languages: "Idiomas",
@@ -62,6 +79,10 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
       kicker: "CV Interactivo",
       ctaPrimary: "Contactar",
       ctaSecondary: "Ver experiencia",
+      ctaPrint: "Imprimir / Guardar PDF",
+    },
+    about: {
+      title: "Sobre Mí",
     },
     opportunities: {
       title: "Tipos de Oportunidad",
@@ -97,6 +118,17 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
     contact: {
       title: "Construyamos Algo con Impacto",
       body: "Abierto a oportunidades remotas y a roles hibridos en Barcelona.",
+    },
+    print: {
+      profileTitle: "Perfil",
+      technologiesTitle: "Tecnologías Clave",
+      softSkillsTitle: "Habilidades Blandas",
+      contactTitle: "Contacto",
+      locationLabel: "Ubicación",
+      phoneLabel: "Teléfono",
+      emailLabel: "Correo",
+      linkedinLabel: "LinkedIn",
+      websiteLabel: "Web",
     },
   },
 };

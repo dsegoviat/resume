@@ -99,6 +99,10 @@
   gap: 1.5rem;
 }
 
+.printResume {
+  display: none;
+}
+
 .hero,
 .section,
 .contact,
@@ -173,7 +177,8 @@
 
 .primaryCta,
 .secondaryCta,
-.contactActions a {
+.contactActions a,
+.printCta {
   border-radius: 11px;
   padding: 0.6rem 0.92rem;
   font-weight: 600;
@@ -189,6 +194,27 @@
 .secondaryCta {
   border: 1px solid rgba(123, 149, 173, 0.5);
   color: var(--text-primary);
+}
+
+.printCta {
+  border: 1px solid rgba(123, 149, 173, 0.5);
+  color: var(--text-primary);
+  background: rgba(11, 22, 35, 0.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  cursor: pointer;
+}
+
+.printButtonIcon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-flex;
+}
+
+.printButtonIcon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .sectionTitle {
@@ -246,6 +272,16 @@
 .sectionHeader p,
 .contact p {
   color: var(--text-secondary);
+}
+
+.aboutBody {
+  display: grid;
+  gap: 0.62rem;
+}
+
+.aboutBody p {
+  color: var(--text-secondary);
+  line-height: 1.55;
 }
 
 .timeline {
@@ -322,7 +358,7 @@
 
 .skillsGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
 }
 
@@ -404,6 +440,393 @@
 .contactButtonIcon svg {
   width: 100%;
   height: 100%;
+}
+
+@media print {
+  .pageShell {
+    min-height: auto;
+    color: #111827;
+    background: #fff;
+    padding: 10mm 11mm 12mm;
+  }
+
+  .backgroundGrid,
+  .header,
+  .hero,
+  .opportunitySection,
+  .availability,
+  .section,
+  .contact,
+  .printCta,
+  .revealItem {
+    display: none !important;
+  }
+
+  .main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    gap: 0;
+  }
+
+  .printResume {
+    display: block;
+  }
+
+  .printSummaryGrid {
+    display: grid;
+    grid-template-columns: minmax(220px, 34%) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .printSummaryLeft,
+  .printSummaryRight {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .printSummaryBlock {
+    padding-bottom: 0.72rem;
+    margin-bottom: 0.1rem;
+    border-bottom: 1px solid #d6dde7;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .printSummaryRight .printSummaryBlock:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .printSummaryBlock h2 {
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.58rem;
+    color: #1d4f7a;
+  }
+
+  .printSectionHeading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .printSectionIcon {
+    width: 0.8rem;
+    height: 0.8rem;
+    display: inline-flex;
+    color: #1d4f7a;
+  }
+
+  .printSectionIcon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .printName {
+    font-size: 1.45rem;
+    line-height: 1.1;
+    color: #0f172a;
+  }
+
+  .printRole {
+    margin-top: 0.22rem;
+    font-size: 0.84rem;
+    color: #334155;
+    line-height: 1.32;
+  }
+
+  .printMetaList,
+  .printCompactList {
+    display: grid;
+    gap: 0.24rem;
+    list-style: none;
+  }
+
+  .printMetaList li,
+  .printCompactList li {
+    font-size: 0.8rem;
+    color: #1f2937;
+    line-height: 1.3;
+  }
+
+  .printMetaList li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+  }
+
+  .printMetaList a,
+  .printCompactList a {
+    color: #1f4d77;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.24rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .printLinkIcon {
+    width: 0.7rem;
+    height: 0.7rem;
+    display: inline-flex;
+  }
+
+  .printLinkIcon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .printInlineIcon {
+    width: 0.75rem;
+    height: 0.75rem;
+    display: inline-flex;
+    color: #1d4f7a;
+  }
+
+  .printInlineIcon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .printEmailLine {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    color: #1f2937;
+    font-weight: 600;
+  }
+
+  .printCompactList li p {
+    color: #334155;
+  }
+
+  .printCompactList li span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #1d4f7a;
+  }
+
+  .printAboutBody {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .printAboutBody p {
+    font-size: 0.84rem;
+    color: #1f2937;
+    line-height: 1.36;
+  }
+
+  .printTechGroups {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .printTechGroup {
+    padding: 0.48rem 0.52rem;
+    border-left: 2px solid #d3e4f5;
+    background: #f8fbfe;
+  }
+
+  .printTechGroup:last-child {
+    padding-bottom: 0.48rem;
+  }
+
+  .printTechGroup h3 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #334155;
+    margin-bottom: 0.42rem;
+  }
+
+  .printTechList {
+    list-style: none;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .printTechList li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.3rem;
+    align-items: baseline;
+    border-bottom: 1px solid #e3eaf2;
+    padding-bottom: 0.14rem;
+  }
+
+  .printTechList li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .printTechList li strong {
+    font-size: 0.77rem;
+    color: #1f2937;
+    font-weight: 600;
+  }
+
+  .printTechList li span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: #1d4f7a;
+  }
+
+  .printBulletList {
+    display: grid;
+    gap: 0.28rem;
+    margin-left: 1rem;
+    list-style: disc;
+  }
+
+  .printBulletList li {
+    font-size: 0.8rem;
+    color: #1f2937;
+    line-height: 1.32;
+  }
+
+  .printLanguageList {
+    list-style: none;
+    display: grid;
+    gap: 0.36rem;
+  }
+
+  .printLanguageItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-bottom: 1px solid #e3eaf2;
+    padding-bottom: 0.2rem;
+  }
+
+  .printLanguageItem:last-child {
+    border-bottom: 0;
+  }
+
+  .printLanguageItem strong {
+    font-size: 0.8rem;
+    color: #1f2937;
+    font-weight: 600;
+  }
+
+  .printLanguageItem span {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: #1d4f7a;
+    border: 1px solid #d3e4f5;
+    background: #ecf4fb;
+    padding: 0.08rem 0.26rem;
+  }
+
+  .printExperiencePage {
+    break-before: page;
+    page-break-before: always;
+    padding-top: 10mm;
+  }
+
+  .printExperienceHeading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.34rem;
+    font-size: 1.12rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #0f172a;
+    margin-bottom: 0.95rem;
+    border-bottom: 1px solid #d6dde7;
+    padding-bottom: 0.3rem;
+  }
+
+  .printExperienceList {
+    display: grid;
+    gap: 1rem;
+    padding-left: 0.9rem;
+  }
+
+  .printExperienceItem {
+    position: relative;
+    padding-left: 0.85rem;
+    border-bottom: 1px solid #d6dde7;
+    padding-bottom: 0.76rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .printExperienceItem::before {
+    content: "";
+    position: absolute;
+    left: 0.03rem;
+    top: 0.32rem;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999px;
+    background: #1d4f7a;
+    border: 1px solid #e3eef9;
+  }
+
+  .printExperienceItem::after {
+    content: "";
+    position: absolute;
+    left: 0.24rem;
+    top: 0.78rem;
+    bottom: -1.02rem;
+    width: 1px;
+    background: linear-gradient(#1d4f7a, #7fa2c3);
+  }
+
+  .printExperienceItem header {
+    display: grid;
+    gap: 0.24rem;
+  }
+
+  .printExperienceItem header p {
+    color: #1d4f7a;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+
+  .printExperienceItem header h3 {
+    color: #0f172a;
+    font-size: 0.94rem;
+    line-height: 1.26;
+  }
+
+  .printExperienceItem header span {
+    color: #475569;
+    font-size: 0.8rem;
+  }
+
+  .printExperienceItem ul {
+    margin-top: 0.44rem;
+    margin-left: 1rem;
+    color: #1f2937;
+    font-size: 0.83rem;
+    display: grid;
+    gap: 0.3rem;
+  }
+
+  .printExperienceTags {
+    margin-top: 0.45rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.26rem;
+  }
+
+  .printExperienceTags span {
+    font-size: 0.64rem;
+    font-family: var(--font-mono);
+    border: 1px solid #d3e4f5;
+    padding: 0.12rem 0.24rem;
+    border-radius: 0;
+    color: #1e4a72;
+    background: #ecf4fb;
+  }
 }
 
 @media (max-width: 1024px) {

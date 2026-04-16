@@ -8,12 +8,30 @@ export interface ContactLink {
   href: string;
 }
 
+export interface TechnologyGroup {
+  id: string;
+  title: LocalizedText;
+  items: Array<{
+    name: string;
+    years: number;
+  }>;
+}
+
 export interface SiteProfile {
   name: string;
   title: LocalizedText;
   summary: LocalizedText;
+  about: Record<Locale, string[]>;
   location: LocalizedText;
   availability: LocalizedText;
+  phone: string;
+  resumeUrl: string;
+  coreTechnologies: Array<{
+    name: string;
+    years: number;
+  }>;
+  technologyGroups: TechnologyGroup[];
+  softSkills: LocalizedText[];
   workPreferences: {
     remote: LocalizedText;
     hybridBarcelona: LocalizedText;
@@ -61,6 +79,7 @@ export interface EducationEntry {
 
 export interface LocaleDictionary {
   nav: {
+    about: string;
     experience: string;
     skills: string;
     languages: string;
@@ -71,6 +90,10 @@ export interface LocaleDictionary {
     kicker: string;
     ctaPrimary: string;
     ctaSecondary: string;
+    ctaPrint: string;
+  };
+  about: {
+    title: string;
   };
   opportunities: {
     title: string;
@@ -102,6 +125,17 @@ export interface LocaleDictionary {
   contact: {
     title: string;
     body: string;
+  };
+  print: {
+    profileTitle: string;
+    technologiesTitle: string;
+    softSkillsTitle: string;
+    contactTitle: string;
+    locationLabel: string;
+    phoneLabel: string;
+    emailLabel: string;
+    linkedinLabel: string;
+    websiteLabel: string;
   };
 }
 

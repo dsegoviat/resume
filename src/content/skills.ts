@@ -84,42 +84,91 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    id: "cloud-ai",
+    id: "cloud-devops",
     title: {
-      en: "Cloud, DevOps and AI",
-      es: "Cloud, DevOps e IA",
+      en: "Cloud and DevOps",
+      es: "Cloud y DevOps",
     },
     items: [
       {
-        name: "AWS / Azure",
+        name: "AWS / Azure / OpenStack",
         years: 7,
         focus: {
-          en: "Cloud architecture, automation and deployment workflows",
-          es: "Arquitectura cloud, automatización y flujos de despliegue",
+          en: "Cloud architecture, migrations and production infrastructure workflows",
+          es: "Arquitectura cloud, migraciones y flujos de infraestructura en producción",
         },
       },
       {
-        name: "CI/CD",
-        years: 7,
+        name: "Docker / Kubernetes / Helm",
+        years: 6,
         focus: {
-          en: "GitHub Actions runners and deployment pipelines",
-          es: "Runners de GitHub Actions y pipelines de despliegue",
+          en: "Containerized workloads, orchestration and deployment management",
+          es: "Contenedores, orquestación y gestión de despliegues",
         },
       },
+      {
+        name: "Ansible / Terraform",
+        years: 6,
+        focus: {
+          en: "Infrastructure as code and repeatable operations at scale",
+          es: "Infraestructura como código y operaciones repetibles a escala",
+        },
+      },
+      {
+        name: "Jenkins / GitHub Actions / CI-CD",
+        years: 6,
+        focus: {
+          en: "Automated pipelines, runners and release workflows",
+          es: "Pipelines automatizados, runners y flujos de release",
+        },
+      },
+      {
+        name: "Grafana / Loki / Prometheus",
+        years: 6,
+        focus: {
+          en: "Observability stack setup, metrics dashboards and alerting",
+          es: "Configuración de observabilidad, dashboards de métricas y alertas",
+        },
+      },
+    ],
+  },
+  {
+    id: "ai-automation",
+    title: {
+      en: "AI and Automation",
+      es: "IA y Automatización",
+    },
+    items: [
       {
         name: "LLM + RAG",
         years: 2,
         focus: {
-          en: "Agentic systems, retrieval and workflow automation",
-          es: "Sistemas de agentes, retrieval y automatización de flujos",
+          en: "Agentic systems, retrieval pipelines and AI-first product flows",
+          es: "Sistemas de agentes, pipelines de retrieval y flujos AI-first",
+        },
+      },
+      {
+        name: "OpenAI / Ollama",
+        years: 2,
+        focus: {
+          en: "LLM integration strategies across cloud and local inference setups",
+          es: "Estrategias de integración LLM en inferencia cloud y local",
         },
       },
       {
         name: "n8n / LangChain / MCP",
         years: 2,
         focus: {
-          en: "Orchestrated automation and AI-native integrations",
-          es: "Automatización orquestada e integraciones AI-native",
+          en: "Orchestrated automation and tool-enabled AI integrations",
+          es: "Automatización orquestada e integraciones IA con herramientas",
+        },
+      },
+      {
+        name: "Qdrant / pgvector / STT-TTS",
+        years: 2,
+        focus: {
+          en: "Vector search, retrieval workflows and voice interfaces",
+          es: "Búsqueda vectorial, workflows de retrieval e interfaces de voz",
         },
       },
     ],
