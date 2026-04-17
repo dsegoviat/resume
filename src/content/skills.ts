@@ -81,6 +81,14 @@ export const skillGroups: SkillGroup[] = [
           es: "Microservicios robustos y APIs backend",
         },
       },
+      {
+        name: "FastAPI",
+        years: 3,
+        focus: {
+          en: "High-performance Python APIs for internal services and integrations",
+          es: "APIs Python de alto rendimiento para servicios internos e integraciones",
+        },
+      },
     ],
   },
   {
