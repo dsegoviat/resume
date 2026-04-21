@@ -177,7 +177,6 @@ export const experienceEntries: ExperienceEntry[] = [
       "Helm",
       "CI/CD",
       "DevOps",
-      "Cloud Migration",
     ],
   },
   {
