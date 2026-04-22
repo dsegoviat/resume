@@ -79,7 +79,7 @@ export const siteProfile: SiteProfile = {
         { name: "React / Next.js", years: 7 },
         { name: "Angular", years: 7 },
         { name: "Tailwind / MUI / Ant Design", years: 7 },
-        { name: "FastAPI", years: 3 },
+        { name: "FastAPI / Django", years: 3 },
       ],
     },
     {

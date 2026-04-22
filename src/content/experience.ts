@@ -105,8 +105,8 @@ export const experienceEntries: ExperienceEntry[] = [
         es: "Tech Lead en un equipo de 5 ingenieros, impulsando estandares de entrega y direccion tecnica.",
       },
       {
-        en: "Developed APIs with Go, Python and FastAPI, and built React-based metrics dashboards.",
-        es: "Desarrollo de APIs con Go, Python y FastAPI, y construccion de dashboards de metricas con React.",
+        en: "Developed APIs with Go, Python, FastAPI and Django, and built React-based metrics dashboards.",
+        es: "Desarrollo de APIs con Go, Python, FastAPI y Django, y construccion de dashboards de metricas con React.",
       },
       {
         en: "Implemented Bash and PowerShell automation and improved CI/CD workflows on Azure.",
@@ -121,6 +121,7 @@ export const experienceEntries: ExperienceEntry[] = [
       "Go",
       "Python",
       "FastAPI",
+      "Django",
       "React",
       "Azure",
       "Bash",

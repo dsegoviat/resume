@@ -82,7 +82,7 @@ export const skillGroups: SkillGroup[] = [
         },
       },
       {
-        name: "FastAPI",
+        name: "FastAPI / Django",
         years: 3,
         focus: {
           en: "High-performance Python APIs for internal services and integrations",
