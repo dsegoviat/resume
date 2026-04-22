@@ -48,6 +48,7 @@ export const siteProfile: SiteProfile = {
     { name: "GitHub Actions", years: 2 },
     { name: "LLM + RAG", years: 2 },
     { name: "OpenAI / Ollama", years: 2 },
+    { name: "Claude Code / Codex", years: 2 },
     { name: "LangChain / n8n", years: 2 },
     { name: "Qdrant / pgvector", years: 2 },
     { name: "Whisper STT/TTS", years: 2 },
@@ -107,6 +108,7 @@ export const siteProfile: SiteProfile = {
       },
       items: [
         { name: "OpenAI / Ollama", years: 2 },
+        { name: "Claude Code / Codex", years: 2 },
         { name: "LangChain / n8n", years: 2 },
         { name: "RAG (Qdrant / pgvector)", years: 2 },
         { name: "Whisper STT/TTS", years: 2 },

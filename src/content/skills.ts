@@ -164,6 +164,14 @@ export const skillGroups: SkillGroup[] = [
         },
       },
       {
+        name: "Claude Code / Codex",
+        years: 2,
+        focus: {
+          en: "AI-assisted coding workflows for rapid implementation and refactoring",
+          es: "Flujos de desarrollo asistidos por IA para implementación y refactorización rápida",
+        },
+      },
+      {
         name: "n8n / LangChain / MCP",
         years: 2,
         focus: {
