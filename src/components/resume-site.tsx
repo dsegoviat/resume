@@ -2,7 +2,6 @@
 
 import type { ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { dictionaries } from "@/content/dictionary";
 import { educationEntries } from "@/content/education";
@@ -235,6 +234,8 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
   });
 
   const dictionary = dictionaries[locale];
+  const profileImageSrc =
+    (process.env.NODE_ENV === "production" ? "/resume" : "") + "/images/profile-avatar.jpg";
 
   const sortedExperiences = useMemo(() => {
     const priority: Record<string, number> = {
@@ -344,12 +345,11 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
               <aside className={styles.printSummaryLeft}>
                 <section className={styles.printSummaryBlock}>
                   <div className={styles.printProfileAvatar}>
-                    <Image
-                      src="/images/profile-avatar.jpg"
+                    <img
+                      src={profileImageSrc}
                       alt={`${siteProfile.name} profile photo`}
                       width={180}
                       height={180}
-                      sizes="96px"
                     />
                   </div>
                   <h1 className={styles.printName}>{siteProfile.name}</h1>
@@ -549,13 +549,13 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
               </div>
             </div>
             <div className={styles.heroAvatar}>
-              <Image
-                src="/images/profile-avatar.jpg"
+              <img
+                src={profileImageSrc}
                 alt={`${siteProfile.name} profile photo`}
                 width={320}
                 height={320}
-                priority
-                sizes="(max-width: 700px) 148px, (max-width: 1024px) 190px, 220px"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>
