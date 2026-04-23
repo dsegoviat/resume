@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { dictionaries } from "@/content/dictionary";
 import { educationEntries } from "@/content/education";
@@ -342,6 +343,15 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
             <div className={styles.printSummaryGrid}>
               <aside className={styles.printSummaryLeft}>
                 <section className={styles.printSummaryBlock}>
+                  <div className={styles.printProfileAvatar}>
+                    <Image
+                      src="/images/profile-avatar.jpg"
+                      alt={`${siteProfile.name} profile photo`}
+                      width={180}
+                      height={180}
+                      sizes="96px"
+                    />
+                  </div>
                   <h1 className={styles.printName}>{siteProfile.name}</h1>
                   <p className={styles.printRole}>{getLocalizedText(locale, siteProfile.title)}</p>
                 </section>
@@ -509,30 +519,45 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
         </section>
 
         <section className={`${styles.hero} ${styles.revealItem}`} data-reveal>
-          <p className={styles.heroTitle}>{getLocalizedText(locale, siteProfile.title)}</p>
-          <p className={styles.heroName}>{siteProfile.name}</p>
-          <h1>{getLocalizedText(locale, siteProfile.summary)}</h1>
-          <p className={styles.metaLine}>
-            {getLocalizedText(locale, siteProfile.location)} | {getLocalizedText(locale, siteProfile.availability)}
-          </p>
-          <div className={styles.heroActions}>
-            <a href="#contact" className={styles.primaryCta}>
-              {dictionary.hero.ctaPrimary}
-            </a>
-            <a href="#experience" className={styles.secondaryCta}>
-              {dictionary.hero.ctaSecondary}
-            </a>
-            <button
-              type="button"
-              className={styles.printCta}
-              onClick={() => window.print()}
-              aria-label={dictionary.hero.ctaPrint}
-            >
-              <span className={styles.printButtonIcon} aria-hidden="true">
-                <PrintIcon />
-              </span>
-              {dictionary.hero.ctaPrint}
-            </button>
+          <div className={styles.heroTop}>
+            <div className={styles.heroCopy}>
+              <p className={styles.heroTitle}>{getLocalizedText(locale, siteProfile.title)}</p>
+              <p className={styles.heroName}>{siteProfile.name}</p>
+              <h1>{getLocalizedText(locale, siteProfile.summary)}</h1>
+              <p className={styles.metaLine}>
+                {getLocalizedText(locale, siteProfile.location)} |{" "}
+                {getLocalizedText(locale, siteProfile.availability)}
+              </p>
+              <div className={styles.heroActions}>
+                <a href="#contact" className={styles.primaryCta}>
+                  {dictionary.hero.ctaPrimary}
+                </a>
+                <a href="#experience" className={styles.secondaryCta}>
+                  {dictionary.hero.ctaSecondary}
+                </a>
+                <button
+                  type="button"
+                  className={styles.printCta}
+                  onClick={() => window.print()}
+                  aria-label={dictionary.hero.ctaPrint}
+                >
+                  <span className={styles.printButtonIcon} aria-hidden="true">
+                    <PrintIcon />
+                  </span>
+                  {dictionary.hero.ctaPrint}
+                </button>
+              </div>
+            </div>
+            <div className={styles.heroAvatar}>
+              <Image
+                src="/images/profile-avatar.jpg"
+                alt={`${siteProfile.name} profile photo`}
+                width={320}
+                height={320}
+                priority
+                sizes="(max-width: 700px) 148px, (max-width: 1024px) 190px, 220px"
+              />
+            </div>
           </div>
         </section>
 

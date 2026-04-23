@@ -118,28 +118,44 @@ export const siteProfile: SiteProfile = {
   ],
   softSkills: [
     {
-      en: "Product design",
-      es: "Diseño de producto",
-    },
-    {
-      en: "Software architecture",
-      es: "Arquitectura de software",
-    },
-    {
-      en: "Requirement engineering",
-      es: "Ingeniería de requisitos",
+      en: "Communication and stakeholder management",
+      es: "Comunicación y gestión de stakeholders",
     },
     {
       en: "Complex problem solving",
       es: "Resolución de problemas complejos",
     },
     {
-      en: "Strong decision making",
-      es: "Toma de decisiones",
+      en: "Cross-functional collaboration",
+      es: "Colaboración transversal",
     },
     {
-      en: "Communication skills",
-      es: "Habilidades de comunicación",
+      en: "Leadership and mentoring",
+      es: "Liderazgo y mentoría",
+    },
+    {
+      en: "Adaptability and agility",
+      es: "Adaptabilidad y agilidad",
+    },
+    {
+      en: "Decision-making under ambiguity",
+      es: "Toma de decisiones en ambigüedad",
+    },
+    {
+      en: "Analytical and critical thinking",
+      es: "Pensamiento analítico y crítico",
+    },
+    {
+      en: "Ownership and initiative",
+      es: "Sentido de propiedad e iniciativa",
+    },
+    {
+      en: "Client relationship management",
+      es: "Gestión de relación con clientes",
+    },
+    {
+      en: "Continuous learning and curiosity",
+      es: "Aprendizaje continuo y curiosidad",
     },
   ],
   workPreferences: {

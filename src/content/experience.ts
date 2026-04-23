@@ -4,8 +4,8 @@ export const experienceEntries: ExperienceEntry[] = [
   {
     id: "ai-automation-engineer",
     role: {
-      en: "AI and Automation Engineer",
-      es: "Ingeniero de IA y Automatizacion",
+      en: "AI Technical Lead & DevOps Engineer",
+      es: "AI Technical Lead y DevOps Engineer",
     },
     company: "Mercedes-Benz (via LTS Beratung)",
     location: {
