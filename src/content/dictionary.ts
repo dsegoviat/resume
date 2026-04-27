@@ -104,7 +104,7 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
         "Desde el desarrollo full-stack hasta arquitectura y automatización AI-native.",
     },
     education: {
-      title: "Educacion",
+      title: "Educación",
     },
     skills: {
       title: "Mapa de Habilidades",
@@ -117,7 +117,7 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
     },
     contact: {
       title: "Construyamos Algo con Impacto",
-      body: "Abierto a oportunidades remotas y a roles hibridos en Barcelona.",
+      body: "Abierto a oportunidades remotas y a roles híbridos en Barcelona.",
     },
     print: {
       profileTitle: "Perfil",
@@ -127,6 +127,71 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
       locationLabel: "Ubicación",
       phoneLabel: "Teléfono",
       emailLabel: "Correo",
+      linkedinLabel: "LinkedIn",
+      websiteLabel: "Web",
+    },
+  },
+  ca: {
+    nav: {
+      about: "Sobre mi",
+      experience: "Experiència",
+      skills: "Habilitats",
+      languages: "Idiomes",
+      contact: "Contacte",
+      blog: "Blog",
+    },
+    hero: {
+      kicker: "CV Interactiu",
+      ctaPrimary: "Contactar",
+      ctaSecondary: "Veure experiència",
+      ctaPrint: "Imprimir / Guardar PDF",
+    },
+    about: {
+      title: "Sobre mi",
+    },
+    opportunities: {
+      title: "Tipus d'Oportunitat",
+      freelanceTitle: "Col·laboracions Freelance",
+      freelanceBody:
+        "Arquitectura, acceleració de lliuraments i automatització amb IA per a equips que necessiten execució senior amb visió de producte.",
+      employeeTitle: "Rols com a Empleat",
+      employeeBody:
+        "Posicions senior full-stack i plataforma on pugui liderar arquitectura, qualitat d'implementació i ritme de l'equip.",
+    },
+    availability: {
+      title: "Disponibilitat",
+      remoteLabel: "Remot",
+      hybridLabel: "Híbrid Barcelona",
+    },
+    experience: {
+      title: "Trajectòria Professional",
+      subtitle:
+        "De l'enginyeria full-stack a l'arquitectura de plataforma i l'automatització AI-native.",
+    },
+    education: {
+      title: "Educació",
+    },
+    skills: {
+      title: "Mapa d'Habilitats",
+      subtitle:
+        "Stack pràctic definit per lliuraments SaaS, operacions cloud i enginyeria frontend moderna.",
+      yearsLabel: "anys",
+    },
+    languages: {
+      title: "Idiomes",
+    },
+    contact: {
+      title: "Construïm Alguna Cosa amb Impacte",
+      body: "Obert a oportunitats remotes i a opcions híbrides a Barcelona.",
+    },
+    print: {
+      profileTitle: "Perfil",
+      technologiesTitle: "Tecnologies Clau",
+      softSkillsTitle: "Habilitats Toves",
+      contactTitle: "Contacte",
+      locationLabel: "Ubicació",
+      phoneLabel: "Telèfon",
+      emailLabel: "Correu",
       linkedinLabel: "LinkedIn",
       websiteLabel: "Web",
     },

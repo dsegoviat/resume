@@ -6,29 +6,50 @@ export const experienceEntries: ExperienceEntry[] = [
     role: {
       en: "AI Technical Lead & DevOps Engineer",
       es: "AI Technical Lead y DevOps Engineer",
+      ca: "AI Technical Lead i DevOps Engineer",
     },
     company: "Mercedes-Benz (via LTS Beratung)",
     location: {
       en: "Remote",
       es: "Remoto",
+      ca: "Remot",
     },
     periodLabel: {
       en: "2024 - Current",
       es: "2024 - Actualidad",
+      ca: "2024 - Actualitat",
     },
     startYear: 2024,
     bullets: [
       {
-        en: "LLM-powered agents, n8n workflows, RAG (retrieval-augmented generation), LangChain, MCP servers and STT/TTS integration.",
-        es: "Agentes con LLM, workflows en n8n, RAG (retrieval-augmented generation), LangChain, servidores MCP e integracion STT/TTS.",
+        en: "Designed and deployed AI agent workflows for customer support automation, including triage and resolution assistance.",
+        es: "Diseño y despliegue de workflows de agentes de IA para soporte a clientes, incluyendo triage y asistencia en resolución.",
+        ca: "Disseny i desplegament de fluxos d'agents d'IA per automatitzar el suport a clients, incloent triatge i assistència en resolució.",
       },
       {
-        en: "Rapid SaaS prototyping with Next.js integrating AI agents.",
-        es: "Prototipado rapido de SaaS con Next.js integrando agentes de IA.",
+        en: "Built an AI copilot for Project Managers to support planning, follow-up and day-to-day execution decisions.",
+        es: "Desarrollo de un copilot de IA para Project Managers para planificación, seguimiento y decisiones de ejecución.",
+        ca: "Desenvolupament d'un copilot d'IA per a Project Managers orientat a planificació, seguiment i presa de decisions.",
       },
       {
-        en: "Led migration from traditional VM-based environments to Kubernetes using Flux Operator, Helm and Docker.",
-        es: "Lidere la migracion de entornos tradicionales basados en VM hacia Kubernetes usando Flux Operator, Helm y Docker.",
+        en: "Automated on-call workflows with voice-agent integrations to accelerate incident handling and operator response.",
+        es: "Automatización de workflows de guardias con integraciones de agentes de voz para acelerar la gestión de incidencias.",
+        ca: "Automatització de processos de guàrdies amb integració d'agents de veu per reduir el temps de resposta davant incidències.",
+      },
+      {
+        en: "Delivered AI-enabled SaaS prototypes with Next.js and led VM-to-Kubernetes migration using Flux, Helm and Docker.",
+        es: "Entrega de prototipos SaaS con IA en Next.js y liderazgo de migración de VM a Kubernetes usando Flux, Helm y Docker.",
+        ca: "Entrega de prototips SaaS amb IA sobre Next.js i lideratge de la migració de VM a Kubernetes amb Flux, Helm i Docker.",
+      },
+      {
+        en: "Partnered with product and operations stakeholders to validate AI proof-of-concepts and transition successful solutions into production.",
+        es: "Colaboración con stakeholders de producto y operaciones para validar pruebas de concepto de IA y llevar soluciones exitosas a producción.",
+        ca: "Validació de proves de concepte amb equips de producte i operacions, portant a producció les iniciatives amb més impacte.",
+      },
+      {
+        en: "Covered 24/7 on-call rotations, restoring critical services within SLA targets during high-severity outages.",
+        es: "Participación en guardias 24/7, restaurando servicios críticos dentro de SLA en incidencias de alta severidad.",
+        ca: "Participació en guàrdies 24/7, recuperant serveis crítics dins dels SLA en incidències d'alta severitat.",
       },
     ],
     techTags: [
@@ -43,6 +64,9 @@ export const experienceEntries: ExperienceEntry[] = [
       "Flux",
       "Helm",
       "Docker",
+      "OpenAI",
+      "Ollama",
+      "STT/TTS",
     ],
   },
   {
@@ -50,26 +74,46 @@ export const experienceEntries: ExperienceEntry[] = [
     role: {
       en: "React and Cloud Engineer",
       es: "React y Cloud Engineer",
+      ca: "React i Cloud Engineer",
     },
     company: "Omnios S.L.",
     location: {
       en: "Barcelona",
       es: "Barcelona",
+      ca: "Barcelona",
     },
     periodLabel: {
       en: "2025 - 2026",
       es: "2025 - 2026",
+      ca: "2025 - 2026",
     },
     startYear: 2025,
     endYear: 2026,
     bullets: [
       {
-        en: "Developed frontend features and interfaces using React.",
-        es: "Desarrollo de funcionalidades frontend e interfaces usando React.",
+        en: "Developed key React features for a platform that monitors Catalan content creators and produces monthly rankings.",
+        es: "Desarrollo de funcionalidades clave en React para una plataforma que monitoriza creadores de contenido catalanes y genera rankings mensuales.",
+        ca: "Desenvolupament de funcionalitats clau en React per a una plataforma de monitoratge de creadors de contingut catalans amb rànquing mensual.",
+      },
+      {
+        en: "Integrated a Google tracking data layer to improve product analytics and behavioral visibility.",
+        es: "Integración de una capa de tracking de Google para mejorar analítica de producto y visibilidad de comportamiento.",
+        ca: "Integració d'una capa de tracking de Google per millorar l'analítica de producte i la visibilitat del comportament.",
       },
       {
         en: "Designed and implemented AWS infrastructure with EC2, Secrets Manager, Lambda, DynamoDB and S3.",
-        es: "Diseno e implementacion de infraestructura AWS con EC2, Secrets Manager, Lambda, DynamoDB y S3.",
+        es: "Diseño e implementación de infraestructura AWS con EC2, Secrets Manager, Lambda, DynamoDB y S3.",
+        ca: "Disseny i implementació d'infraestructura AWS amb EC2, Secrets Manager, Lambda, DynamoDB i S3.",
+      },
+      {
+        en: "Supervised recurring data migration cycles executed through AWS Lambda pipelines.",
+        es: "Supervisión de migraciones periódicas de datos ejecutadas mediante pipelines con AWS Lambda.",
+        ca: "Supervisió de migracions periòdiques de dades executades mitjançant pipelines amb AWS Lambda.",
+      },
+      {
+        en: "Maintained ranking reliability through monitoring and operational controls for monthly publication cycles.",
+        es: "Mantenimiento de la fiabilidad del ranking mediante monitorización y controles operativos en ciclos mensuales de publicación.",
+        ca: "Millora de la fiabilitat operativa del procés de publicació mensual dels rànquings.",
       },
     ],
     techTags: [
@@ -80,6 +124,7 @@ export const experienceEntries: ExperienceEntry[] = [
       "Lambda",
       "DynamoDB",
       "S3",
+      "Google Analytics",
     ],
   },
   {
@@ -87,34 +132,46 @@ export const experienceEntries: ExperienceEntry[] = [
     role: {
       en: "Tech Lead & DevOps Engineer",
       es: "Tech Lead y DevOps Engineer",
+      ca: "Tech Lead i DevOps Engineer",
     },
     company: "Mercedes-Benz (via LTS Beratung)",
     location: {
       en: "Remote",
       es: "Remoto",
+      ca: "Remot",
     },
     periodLabel: {
       en: "2022 - 2024",
       es: "2022 - 2024",
+      ca: "2022 - 2024",
     },
     startYear: 2022,
     endYear: 2024,
     bullets: [
       {
-        en: "Tech Lead in a team of 5 engineers, driving delivery standards and technical direction.",
-        es: "Tech Lead en un equipo de 5 ingenieros, impulsando estandares de entrega y direccion tecnica.",
+        en: "Led a team of 5 engineers, setting technical direction and delivery standards for platform engineering initiatives.",
+        es: "Liderazgo de un equipo de 5 ingenieros, definiendo dirección técnica y estándares de entrega para iniciativas de plataforma.",
+        ca: "Lideratge tècnic d'un equip de 5 enginyers, definint estàndards d'entrega i direcció de plataforma.",
       },
       {
-        en: "Developed APIs with Go, Python, FastAPI and Django, and built React-based metrics dashboards.",
-        es: "Desarrollo de APIs con Go, Python, FastAPI y Django, y construccion de dashboards de metricas con React.",
+        en: "Integrated GitHub Actions into Mercedes-Benz GitHub Enterprise using the open-source GARM (GitHub Actions Runner Manager), orchestrating runners across Azure, AWS, OpenStack and Kubernetes.",
+        es: "Integración de GitHub Actions en GitHub Enterprise de Mercedes-Benz usando la herramienta open source GARM (GitHub Actions Runner Manager), orquestando runners en Azure, AWS, OpenStack y Kubernetes.",
+        ca: "Integració de GitHub Actions a GitHub Enterprise de Mercedes-Benz amb GARM (GitHub Actions Runner Manager), orquestrant runners a Azure, AWS, OpenStack i Kubernetes.",
       },
       {
-        en: "Implemented Bash and PowerShell automation and improved CI/CD workflows on Azure.",
-        es: "Implementacion de automatizaciones con Bash y PowerShell y mejora de flujos CI/CD en Azure.",
+        en: "Developed APIs (Go/Python/FastAPI/Django) and React dashboards to expose runner usage metrics and client customization controls.",
+        es: "Desarrollo de APIs (Go/Python/FastAPI/Django) y dashboards React para métricas de uso y customización de clientes.",
+        ca: "Desenvolupament d'APIs amb Go, Python, FastAPI i Django, i dashboards React per mètriques d'ús i personalització de clients.",
       },
       {
-        en: "Set up and operated Grafana, Loki and Prometheus stacks, including dashboards and alerting.",
-        es: "Configuracion y operacion de stacks de Grafana, Loki y Prometheus, incluyendo dashboards y alertas.",
+        en: "Enabled enterprise-wide adoption through platform standards, documentation and onboarding support for development teams.",
+        es: "Habilitación de adopción a nivel empresa mediante estándares de plataforma, documentación y soporte de onboarding a equipos de desarrollo.",
+        ca: "Impuls de l'adopció interna de la plataforma amb documentació, onboarding i bones pràctiques.",
+      },
+      {
+        en: "Maintained runner base images and platform reliability, while covering 24/7 on-call incident response and recovery.",
+        es: "Mantenimiento de imágenes base de runners y fiabilidad de plataforma, incluyendo guardias 24/7 para respuesta y recuperación.",
+        ca: "Manteniment d'imatges base de runners i estabilitat de plataforma, amb cobertura de guàrdies 24/7.",
       },
     ],
     techTags: [
@@ -130,7 +187,8 @@ export const experienceEntries: ExperienceEntry[] = [
       "Loki",
       "Prometheus",
       "CI/CD",
-      "DevOps",
+      "GitHub Actions",
+      "GARM",
     ],
   },
   {
@@ -138,34 +196,41 @@ export const experienceEntries: ExperienceEntry[] = [
     role: {
       en: "React Developer & DevOps Engineer",
       es: "Desarrollador React y DevOps Engineer",
+      ca: "Desenvolupador React i DevOps Engineer",
     },
     company: "Zurich Insurance Group (via Group AV)",
     location: {
       en: "Barcelona / Remote",
       es: "Barcelona / Remoto",
+      ca: "Barcelona / Remot",
     },
     periodLabel: {
       en: "2021 - 2022",
       es: "2021 - 2022",
+      ca: "2021 - 2022",
     },
     startYear: 2021,
     endYear: 2022,
     bullets: [
       {
-        en: "Built and maintained a set of three actuarial software applications using React.",
-        es: "Desarrollo y mantenimiento de un conjunto de tres aplicaciones actuariales con React.",
+        en: "Developed and maintained three actuarial software applications used by Zurich internal teams.",
+        es: "Desarrollo y mantenimiento de tres aplicaciones actuariales usadas por equipos internos de Zurich.",
+        ca: "Desenvolupament i manteniment de tres aplicacions actuarials utilitzades pels equips interns de Zurich.",
       },
       {
-        en: "Standardized frontend systems using MUI and Ant Design to improve consistency and delivery speed.",
-        es: "Estandarizacion de sistemas frontend usando MUI y Ant Design para mejorar consistencia y velocidad de entrega.",
+        en: "Unified the visual layer across applications by creating a shared component library with automated build and release flows.",
+        es: "Unificación de la capa visual entre aplicaciones mediante una librería de componentes compartida con build y release automatizados.",
+        ca: "Unificació de la capa visual amb una llibreria de components compartida i fluxos automatitzats de build/release.",
       },
       {
-        en: "Deployed frontend applications on Azure Kubernetes Service (AKS) using Docker and Helm.",
-        es: "Despliegue de aplicaciones frontend en Azure Kubernetes Service (AKS) usando Docker y Helm.",
+        en: "Standardized frontend delivery with MUI and Ant Design, improving consistency and development velocity.",
+        es: "Estandarización del delivery frontend con MUI y Ant Design, mejorando consistencia y velocidad de desarrollo.",
+        ca: "Estandardització del lliurament frontend amb MUI i Ant Design, millorant consistència i velocitat de desenvolupament.",
       },
       {
-        en: "Led migration of multiple web services from on-prem to Azure, including architecture planning and implementation.",
-        es: "Lidere la migracion de varios servicios web de on-prem a Azure, incluyendo planificacion e implementacion de arquitectura.",
+        en: "Led migration of multiple web services from on-prem to Azure, deploying workloads on AKS with Docker and Helm.",
+        es: "Liderazgo de migración de servicios web de on-prem a Azure, desplegando cargas en AKS con Docker y Helm.",
+        ca: "Migració de serveis web d'entorns on-prem a Azure, amb desplegament a AKS mitjançant Docker i Helm.",
       },
     ],
     techTags: [
@@ -185,45 +250,52 @@ export const experienceEntries: ExperienceEntry[] = [
     role: {
       en: "Full Stack Engineer",
       es: "Ingeniero Full Stack",
+      ca: "Enginyer Full Stack",
     },
     company: "Mercedes-Benz (via LTS Beratung)",
     location: {
       en: "Barcelona / Remote",
       es: "Barcelona / Remoto",
+      ca: "Barcelona / Remot",
     },
     periodLabel: {
       en: "2017 - 2021",
       es: "2017 - 2021",
+      ca: "2017 - 2021",
     },
     startYear: 2017,
     endYear: 2021,
     bullets: [
       {
-        en: "Designed and delivered REST APIs and CLI tools with Java and Spring Boot for enterprise platforms.",
-        es: "Diseno y desarrollo de APIs REST y herramientas CLI con Java y Spring Boot para plataformas enterprise.",
+        en: "Co-developed a multi-tenant internal platform to provision and configure SDLC services.",
+        es: "Co-desarrollo de una plataforma interna multi-tenant para aprovisionar y configurar servicios SDLC.",
+        ca: "Co-desenvolupament d'una plataforma interna multi-tenant per aprovisionar i configurar serveis SDLC.",
       },
       {
-        en: "Automated UNIX operations with Python and Bash scripting, including Terraform and Ansible infrastructure tasks.",
-        es: "Automatizacion de operaciones UNIX con scripting en Python y Bash, incluyendo tareas de infraestructura con Terraform y Ansible.",
+        en: "Designed and delivered REST APIs and CLI tools with Java and Spring Boot for enterprise platform capabilities.",
+        es: "Diseño y entrega de APIs REST y herramientas CLI con Java y Spring Boot para capacidades de plataforma enterprise.",
+        ca: "Disseny i lliurament d'APIs REST i eines CLI amb Java i Spring Boot per a capacitats de plataforma enterprise.",
       },
       {
-        en: "Worked primarily with OpenStack and AWS for cloud workloads.",
-        es: "Trabajo principal con OpenStack y AWS para cargas cloud.",
+        en: "Automated UNIX operations with Python and Bash, including Terraform and Ansible tasks across OpenStack and AWS workloads.",
+        es: "Automatización de operaciones UNIX con Python y Bash, incluyendo tareas con Terraform y Ansible en OpenStack y AWS.",
+        ca: "Automatització d'operacions UNIX amb Python i Bash, incloent tasques amb Terraform i Ansible en càrregues OpenStack i AWS.",
       },
       {
-        en: "Built the frontend of an infrastructure e-store using Angular.",
-        es: "Desarrollo del frontend de un e-store de infraestructura usando Angular.",
+        en: "Built the frontend of an infrastructure online store with Angular and integrated quality/observability tooling with Elasticsearch, SonarQube and Jenkins.",
+        es: "Desarrollo del frontend de una tienda online de infraestructura con Angular e integración de calidad/observabilidad con Elasticsearch, SonarQube y Jenkins.",
+        ca: "Desenvolupament del frontend d'una botiga online d'infraestructura amb Angular, integrant eines de qualitat i observabilitat amb Elasticsearch, SonarQube i Jenkins.",
       },
       {
-        en: "Integrated quality and observability tooling with Elasticsearch, SonarQube and Jenkins.",
-        es: "Integracion de herramientas de calidad y observabilidad con Elasticsearch, SonarQube y Jenkins.",
+        en: "Provided 24/7 customer support and incident response while administering Linux systems in production.",
+        es: "Soporte 24/7 a clientes y respuesta a incidencias, administrando sistemas Linux en producción.",
+        ca: "Suport 24/7 i resposta a incidències en sistemes Linux en producció.",
       },
     ],
     techTags: [
       "Java",
       "Spring Boot",
       "REST API",
-      "CLI",
       "Python",
       "Bash",
       "Terraform",
@@ -244,30 +316,36 @@ export const experienceEntries: ExperienceEntry[] = [
     role: {
       en: "Junior Full-stack Developer",
       es: "Desarrollador Full-stack Junior",
+      ca: "Desenvolupador Full-stack Junior",
     },
     company: "Accenture",
     location: {
       en: "Barcelona",
       es: "Barcelona",
+      ca: "Barcelona",
     },
     periodLabel: {
       en: "2016 - 2017",
       es: "2016 - 2017",
+      ca: "2016 - 2017",
     },
     startYear: 2016,
     endYear: 2017,
     bullets: [
       {
-        en: "Android and Hybrid app development.",
-        es: "Desarrollo de aplicaciones Android e hibridas.",
+        en: "Delivered Spring Boot middleware features for banking systems in regulated enterprise environments.",
+        es: "Entrega de funcionalidades de middleware con Spring Boot para sistemas bancarios en entornos regulados.",
+        ca: "Lliurament de funcionalitats de middleware amb Spring Boot per a sistemes bancaris en entorns enterprise regulats.",
       },
       {
-        en: "REST API development using Spring Boot (Java).",
-        es: "Desarrollo de APIs REST usando Spring Boot (Java).",
+        en: "Built hybrid applications for banking and insurance use cases with production-grade reliability requirements.",
+        es: "Desarrollo de aplicaciones híbridas para casos de uso de banca y seguros con requisitos de fiabilidad de producción.",
+        ca: "Desenvolupament d'aplicacions híbrides per a casos d'ús de banca i assegurances amb requisits de fiabilitat de producció.",
       },
       {
-        en: "Automation scripting using JavaScript and Python.",
-        es: "Scripting de automatizacion usando JavaScript y Python.",
+        en: "Contributed to API and automation scripting using JavaScript and Python across integration workflows.",
+        es: "Contribución en APIs y scripting de automatización con JavaScript y Python en flujos de integración.",
+        ca: "Contribució en APIs i scripting d'automatització amb JavaScript i Python en fluxos d'integració.",
       },
     ],
     techTags: ["Java", "Spring Boot", "Android", "Python", "JavaScript"],

@@ -1,4 +1,4 @@
-export type Locale = "en" | "es";
+export type Locale = "en" | "es" | "ca";
 
 export type LocalizedText = Record<Locale, string>;
 
@@ -65,7 +65,7 @@ export interface SkillGroup {
 
 export interface SpokenLanguage {
   id: string;
-  name: string;
+  name: LocalizedText;
   level: LocalizedText;
 }
 

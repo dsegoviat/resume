@@ -29,6 +29,11 @@ async function getPostFiles(): Promise<string[]> {
 
 function toPostMeta(fileName: string, frontmatter: PostFrontmatter): BlogPostMeta {
   const fallbackTitle = fileName.replace(/\.mdx$/, "").replace(/-/g, " ");
+  const locale =
+    frontmatter.locale === "es" || frontmatter.locale === "ca"
+      ? frontmatter.locale
+      : "en";
+
   return {
     slug: fileName.replace(/\.mdx$/, ""),
     title: frontmatter.title ?? fallbackTitle,
@@ -36,7 +41,7 @@ function toPostMeta(fileName: string, frontmatter: PostFrontmatter): BlogPostMet
     tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
     summary: frontmatter.summary ?? "",
     published: frontmatter.published === true,
-    locale: frontmatter.locale === "es" ? "es" : "en",
+    locale,
   };
 }
 

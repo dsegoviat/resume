@@ -6,6 +6,7 @@ export const skillGroups: SkillGroup[] = [
     title: {
       en: "Software Engineering",
       es: "Ingeniería de Software",
+      ca: "Enginyeria de Programari",
     },
     items: [
       {
@@ -14,6 +15,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Backend services, API design and enterprise architecture",
           es: "Servicios backend, diseño de APIs y arquitectura empresarial",
+          ca: "Serveis backend, disseny d'APIs i arquitectura empresarial",
         },
       },
       {
@@ -22,6 +24,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Scalable frontend and full-stack product development",
           es: "Desarrollo frontend y full-stack escalable",
+          ca: "Desenvolupament frontend i full-stack escalable",
         },
       },
       {
@@ -30,6 +33,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Automation scripts, orchestration and AI tooling",
           es: "Automatización, orquestación y herramientas de IA",
+          ca: "Automatització, orquestració i eines d'IA",
         },
       },
       {
@@ -38,6 +42,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "High-performance tooling and infrastructure tasks",
           es: "Herramientas de alto rendimiento y tareas de infraestructura",
+          ca: "Eines d'alt rendiment i tasques d'infraestructura",
         },
       },
     ],
@@ -47,6 +52,7 @@ export const skillGroups: SkillGroup[] = [
     title: {
       en: "Frameworks and UI",
       es: "Frameworks y UI",
+      ca: "Frameworks i Interfície",
     },
     items: [
       {
@@ -55,6 +61,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Interactive product UIs and production-grade web apps",
           es: "Interfaces interactivas y aplicaciones web para producción",
+          ca: "Interfícies interactives i aplicacions web de qualitat de producció",
         },
       },
       {
@@ -63,6 +70,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Enterprise frontend architectures and component systems",
           es: "Arquitecturas frontend enterprise y sistemas de componentes",
+          ca: "Arquitectures frontend enterprise i sistemes de components",
         },
       },
       {
@@ -71,6 +79,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Consistent design systems and rapid UI implementation",
           es: "Sistemas de diseño consistentes e implementación rápida",
+          ca: "Sistemes de disseny consistents i implementació ràpida d'UI",
         },
       },
       {
@@ -79,6 +88,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Robust microservices and backend APIs",
           es: "Microservicios robustos y APIs backend",
+          ca: "Microserveis robustos i APIs backend",
         },
       },
       {
@@ -87,6 +97,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "High-performance Python APIs for internal services and integrations",
           es: "APIs Python de alto rendimiento para servicios internos e integraciones",
+          ca: "APIs Python d'alt rendiment per a serveis interns i integracions",
         },
       },
     ],
@@ -96,6 +107,7 @@ export const skillGroups: SkillGroup[] = [
     title: {
       en: "Cloud and DevOps",
       es: "Cloud y DevOps",
+      ca: "Cloud i DevOps",
     },
     items: [
       {
@@ -104,6 +116,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Cloud architecture, migrations and production infrastructure workflows",
           es: "Arquitectura cloud, migraciones y flujos de infraestructura en producción",
+          ca: "Arquitectura cloud, migracions i fluxos d'infraestructura en producció",
         },
       },
       {
@@ -112,6 +125,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Containerized workloads, orchestration and deployment management",
           es: "Contenedores, orquestación y gestión de despliegues",
+          ca: "Contenidors, orquestració i gestió de desplegaments",
         },
       },
       {
@@ -120,6 +134,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Infrastructure as code and repeatable operations at scale",
           es: "Infraestructura como código y operaciones repetibles a escala",
+          ca: "Infraestructura com a codi i operacions repetibles a escala",
         },
       },
       {
@@ -128,6 +143,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Automated pipelines, runners and release workflows",
           es: "Pipelines automatizados, runners y flujos de release",
+          ca: "Pipelines automatitzats, runners i fluxos de release",
         },
       },
       {
@@ -136,6 +152,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Observability stack setup, metrics dashboards and alerting",
           es: "Configuración de observabilidad, dashboards de métricas y alertas",
+          ca: "Configuració d'observabilitat, dashboards de mètriques i alertes",
         },
       },
     ],
@@ -145,6 +162,7 @@ export const skillGroups: SkillGroup[] = [
     title: {
       en: "AI and Automation",
       es: "IA y Automatización",
+      ca: "IA i Automatització",
     },
     items: [
       {
@@ -153,6 +171,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Agentic systems, retrieval pipelines and AI-first product flows",
           es: "Sistemas de agentes, pipelines de retrieval y flujos AI-first",
+          ca: "Sistemes d'agents, pipelines de retrieval i fluxos AI-first",
         },
       },
       {
@@ -161,6 +180,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "LLM integration strategies across cloud and local inference setups",
           es: "Estrategias de integración LLM en inferencia cloud y local",
+          ca: "Estratègies d'integració LLM en inferència cloud i local",
         },
       },
       {
@@ -169,6 +189,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "AI-assisted coding workflows for rapid implementation and refactoring",
           es: "Flujos de desarrollo asistidos por IA para implementación y refactorización rápida",
+          ca: "Fluxos de desenvolupament assistits per IA per implementació i refactorització ràpida",
         },
       },
       {
@@ -177,6 +198,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Orchestrated automation and tool-enabled AI integrations",
           es: "Automatización orquestada e integraciones IA con herramientas",
+          ca: "Automatització orquestrada i integracions d'IA amb eines",
         },
       },
       {
@@ -185,6 +207,7 @@ export const skillGroups: SkillGroup[] = [
         focus: {
           en: "Vector search, retrieval workflows and voice interfaces",
           es: "Búsqueda vectorial, workflows de retrieval e interfaces de voz",
+          ca: "Cerca vectorial, workflows de retrieval i interfícies de veu",
         },
       },
     ],
@@ -194,26 +217,41 @@ export const skillGroups: SkillGroup[] = [
 export const spokenLanguages: SpokenLanguage[] = [
   {
     id: "es",
-    name: "Spanish",
+    name: {
+      en: "Spanish",
+      es: "Español",
+      ca: "Castellà",
+    },
     level: {
       en: "Native",
       es: "Nativo",
+      ca: "Natiu",
     },
   },
   {
     id: "ca",
-    name: "Catalan",
+    name: {
+      en: "Catalan",
+      es: "Catalán",
+      ca: "Català",
+    },
     level: {
       en: "Native",
       es: "Nativo",
+      ca: "Natiu",
     },
   },
   {
     id: "en",
-    name: "English",
+    name: {
+      en: "English",
+      es: "Inglés",
+      ca: "Anglès",
+    },
     level: {
       en: "C1",
       es: "Fluido",
+      ca: "C1",
     },
   },
 ];

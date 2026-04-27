@@ -16,7 +16,7 @@ type ResumeSiteProps = {
 };
 
 function getLocalizedText(locale: Locale, value: LocalizedText) {
-  return value[locale];
+  return value[locale] ?? value.en;
 }
 
 function SectionTitle({ icon, title }: { icon: ReactNode; title: string }) {
@@ -215,7 +215,12 @@ function PhoneSmallIcon() {
 }
 
 function cleanCvLocation(locale: Locale, location: string) {
-  const remotePattern = locale === "es" ? /(?:\s*\/\s*)?Remoto/gi : /(?:\s*\/\s*)?Remote/gi;
+  const remotePattern =
+    locale === "es"
+      ? /(?:\s*\/\s*)?Remoto/gi
+      : locale === "ca"
+        ? /(?:\s*\/\s*)?Remot/gi
+        : /(?:\s*\/\s*)?Remote/gi;
 
   return location
     .replace(remotePattern, "")
@@ -225,13 +230,7 @@ function cleanCvLocation(locale: Locale, location: string) {
 }
 
 export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
-  const [locale, setLocale] = useState<Locale>(() => {
-    if (typeof window === "undefined") {
-      return "en";
-    }
-    const storedLocale = window.localStorage.getItem("resume-locale");
-    return storedLocale === "es" ? "es" : "en";
-  });
+  const [locale, setLocale] = useState<Locale>("en");
 
   const dictionary = dictionaries[locale];
   const profileImageSrc =
@@ -260,16 +259,49 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
     });
   }, []);
   const printExperiencePages = useMemo(() => {
-    if (sortedExperiences.length <= 5) {
-      return [sortedExperiences];
+    // Keep Zurich as the first entry of a new page so the timeline heading
+    // is repeated there and page rhythm stays readable.
+    const zurichStartIndex = sortedExperiences.findIndex(
+      (entry) => entry.id === "zurich-react-devops",
+    );
+    if (zurichStartIndex > 0) {
+      return [sortedExperiences.slice(0, zurichStartIndex), sortedExperiences.slice(zurichStartIndex)];
     }
 
-    return [sortedExperiences.slice(0, 5), sortedExperiences.slice(5)];
+    const maxEntriesPerPage = 6;
+
+    if (sortedExperiences.length <= maxEntriesPerPage) {
+      return [sortedExperiences.slice()];
+    }
+
+    const pages: typeof sortedExperiences[] = [];
+    for (let start = 0; start < sortedExperiences.length; start += maxEntriesPerPage) {
+      pages.push(sortedExperiences.slice(start, start + maxEntriesPerPage));
+    }
+
+    // Avoid a last page with a single item to reduce awkward page jumps.
+    if (pages.length > 1 && pages[pages.length - 1].length === 1) {
+      const previousPage = pages[pages.length - 2];
+      const lastPage = pages[pages.length - 1];
+      const movedEntry = previousPage.pop();
+      if (movedEntry) {
+        lastPage.unshift(movedEntry);
+      }
+    }
+
+    return pages;
   }, [sortedExperiences]);
 
   const emailLink = siteProfile.contactLinks.find((link) => link.id === "email");
   const emailAddress = emailLink?.href.replace("mailto:", "");
   const linkedinLink = siteProfile.contactLinks.find((link) => link.id === "linkedin");
+
+  useEffect(() => {
+    const storedLocale = window.localStorage.getItem("resume-locale");
+    if (storedLocale === "es" || storedLocale === "ca") {
+      setLocale(storedLocale);
+    }
+  }, []);
 
   useEffect(() => {
     const nodes = Array.from(
@@ -334,6 +366,13 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
             data-active={locale === "es"}
           >
             ES
+          </button>
+          <button
+            type="button"
+            onClick={() => changeLocale("ca")}
+            data-active={locale === "ca"}
+          >
+            CA
           </button>
         </div>
       </header>
@@ -426,7 +465,7 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
                   <ul className={styles.printLanguageList}>
                     {spokenLanguages.map((language) => (
                       <li key={language.id} className={styles.printLanguageItem}>
-                        <strong>{language.name}</strong>
+                        <strong>{getLocalizedText(locale, language.name)}</strong>
                         <span>{getLocalizedText(locale, language.level)}</span>
                       </li>
                     ))}
@@ -704,7 +743,7 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
           <div className={styles.languagesGrid}>
             {spokenLanguages.map((language) => (
               <article key={language.id} className={styles.languageCard}>
-                <strong>{language.name}</strong>
+                <strong>{getLocalizedText(locale, language.name)}</strong>
                 <p>{getLocalizedText(locale, language.level)}</p>
               </article>
             ))}
