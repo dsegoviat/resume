@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { dictionaries } from "@/content/dictionary";
 import { educationEntries } from "@/content/education";
@@ -14,6 +14,36 @@ import styles from "./resume-site.module.css";
 type ResumeSiteProps = {
   hasBlogPosts: boolean;
 };
+
+const LOCALE_STORAGE_KEY = "resume-locale";
+const LOCALE_CHANGE_EVENT = "resume-locale-change";
+
+function toLocale(value: string | null): Locale {
+  return value === "es" || value === "ca" ? value : "en";
+}
+
+function getLocaleSnapshot(): Locale {
+  if (typeof window === "undefined") {
+    return "en";
+  }
+
+  return toLocale(window.localStorage.getItem(LOCALE_STORAGE_KEY));
+}
+
+function subscribeLocale(callback: () => void) {
+  if (typeof window === "undefined") {
+    return () => {};
+  }
+
+  const onChange = () => callback();
+  window.addEventListener("storage", onChange);
+  window.addEventListener(LOCALE_CHANGE_EVENT, onChange);
+
+  return () => {
+    window.removeEventListener("storage", onChange);
+    window.removeEventListener(LOCALE_CHANGE_EVENT, onChange);
+  };
+}
 
 function getLocalizedText(locale: Locale, value: LocalizedText) {
   return value[locale] ?? value.en;
@@ -230,35 +260,37 @@ function cleanCvLocation(locale: Locale, location: string) {
 }
 
 export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
-  const [locale, setLocale] = useState<Locale>("en");
+  const locale = useSyncExternalStore<Locale>(
+    subscribeLocale,
+    getLocaleSnapshot,
+    () => "en",
+  );
 
   const dictionary = dictionaries[locale];
   const profileImageSrc =
     (process.env.NODE_ENV === "production" ? "/resume" : "") + "/images/profile-avatar.jpg";
 
-  const sortedExperiences = useMemo(() => {
+  const sortedExperiences = [...experienceEntries].sort((a, b) => {
     const priority: Record<string, number> = {
       "ai-automation-engineer": 0,
       "omnios-frontend-cloud": 1,
     };
 
-    return [...experienceEntries].sort((a, b) => {
-      const aPriority = priority[a.id];
-      const bPriority = priority[b.id];
-      const aHasPriority = aPriority !== undefined;
-      const bHasPriority = bPriority !== undefined;
+    const aPriority = priority[a.id];
+    const bPriority = priority[b.id];
+    const aHasPriority = aPriority !== undefined;
+    const bHasPriority = bPriority !== undefined;
 
-      if (aHasPriority || bHasPriority) {
-        if (aHasPriority && bHasPriority) {
-          return aPriority - bPriority;
-        }
-        return aHasPriority ? -1 : 1;
+    if (aHasPriority || bHasPriority) {
+      if (aHasPriority && bHasPriority) {
+        return aPriority - bPriority;
       }
+      return aHasPriority ? -1 : 1;
+    }
 
-      return b.startYear - a.startYear;
-    });
-  }, []);
-  const printExperiencePages = useMemo(() => {
+    return b.startYear - a.startYear;
+  });
+  const printExperiencePages = (() => {
     // Keep Zurich as the first entry of a new page so the timeline heading
     // is repeated there and page rhythm stays readable.
     const zurichStartIndex = sortedExperiences.findIndex(
@@ -290,18 +322,11 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
     }
 
     return pages;
-  }, [sortedExperiences]);
+  })();
 
   const emailLink = siteProfile.contactLinks.find((link) => link.id === "email");
   const emailAddress = emailLink?.href.replace("mailto:", "");
   const linkedinLink = siteProfile.contactLinks.find((link) => link.id === "linkedin");
-
-  useEffect(() => {
-    const storedLocale = window.localStorage.getItem("resume-locale");
-    if (storedLocale === "es" || storedLocale === "ca") {
-      setLocale(storedLocale);
-    }
-  }, []);
 
   useEffect(() => {
     const nodes = Array.from(
@@ -329,8 +354,12 @@ export function ResumeSite({ hasBlogPosts }: ResumeSiteProps) {
   }, []);
 
   const changeLocale = (nextLocale: Locale) => {
-    setLocale(nextLocale);
-    window.localStorage.setItem("resume-locale", nextLocale);
+    if (toLocale(window.localStorage.getItem(LOCALE_STORAGE_KEY)) === nextLocale) {
+      return;
+    }
+
+    window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
+    window.dispatchEvent(new Event(LOCALE_CHANGE_EVENT));
   };
 
   return (
